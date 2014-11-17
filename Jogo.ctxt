@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=nomeJogo\ temaJogo
+comment0.target=Jogo(java.lang.String,\ java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ getJogo()
+comment2.params=
+comment2.target=java.lang.String\ getTema()
+comment3.params=nomeJogo
+comment3.target=void\ setJogo(java.lang.String)
+comment4.params=temaJogo
+comment4.target=void\ setTema(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+numComments=6
