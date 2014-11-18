@@ -1,6 +1,6 @@
 public class Jogo
 {
-    private String nomeJogo,temaJogo;
+    String nomeJogo,temaJogo;
     public Jogo(String nomeJogo, String temaJogo) {
         this.nomeJogo = nomeJogo;
         this.temaJogo = temaJogo;

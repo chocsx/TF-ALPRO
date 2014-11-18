@@ -7,7 +7,7 @@ public class App
         ArrayList<Respondente> listaResp = new ArrayList<Respondente>();
         ArrayList<Jogo> listaJogos = new ArrayList<Jogo>();
         do{
-        System.out.println("\fBem-Vindo ao Sistema MatematiC@ndo: \n 1: Cadastro Respondente \n 2: Cadastro Jogo ["+ listaJogos.size()+ "] \n 3: Impressão de relatórios \n 4: Excluir Respondente \n 5: Alterar Respondente \n 6: Excluir Jogo");
+        System.out.println("\fBem-Vindo ao Sistema MatematiC@ndo: \n 1: Cadastro Respondente["+ listaResp.size()+ "] \n 2: Cadastro Jogo ["+ listaJogos.size()+ "] \n 3: Impressão de relatórios \n 4: Excluir Respondente \n 5: Alterar Respondente \n 6: Excluir Jogo");
         System.out.println("Escolha a opção desejada:");
         escolha = ms.nextInt();
                   
@@ -51,18 +51,20 @@ public class App
             case 5:
                 System.exit(1)  ;
             case 6: 
-                System.out.println("Qual jogo você deseja excluir?");
-                System.out.println(listaJogos);
-                String gameDelete;
-                gameDelete = ms.nextLine();
-
-                
+                System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
+                int i = 0;
+                for (Jogo nomeJogo: listaJogos) {
+                    System.out.printf("Posição %d- %s\n", i, nomeJogo);
+                    i++;
+                }
+                System.out.printf("\nInforme a posição a ser excluída:\n"); 
+                i = ms.nextInt();
                 break;
             default:
             System.out.println("Digite um numero válido");
             break;
         }
-    }while(escolha != 8);
+    }while(escolha != 6);
     
 }
 
