@@ -31,13 +31,16 @@ public class App
                 nomeEscola = ms.nextLine();
                 break;
             case 2:
-                
-                System.out.println("\f Qual o Nome do Jogo:");
-                String game = ms.nextLine();
-                game = ms.nextLine();
-                System.out.println( "Qual o Tema do Jogo:");
-                String catego = ms.nextLine();
-                Jogo  novoJogo = new Jogo(game, catego);
+                String game;
+                Jogo novoJogo;
+                do{
+                    System.out.println("\f Qual o Nome do Jogo:");
+                    ms.nextLine();
+                    game = ms.nextLine();
+                    System.out.println( "Qual o Tema do Jogo:");
+                    String catego = ms.nextLine();
+                    novoJogo = new Jogo(game, catego);
+                }while(listaJogos.contains(novoJogo) == true);
                 listaJogos.add(novoJogo);
                 Arrays.toString( listaJogos.toArray() );
 
@@ -59,12 +62,16 @@ public class App
                 }
                 System.out.printf("\nInforme a posição a ser excluída:\n"); 
                 i = ms.nextInt();
+                listaJogos.remove(i);
+                break;
+            case 7:
+                System.exit(1)  ;
                 break;
             default:
             System.out.println("Digite um numero válido");
             break;
         }
-    }while(escolha != 6);
+    }while(escolha != 7);
     
 }
 
