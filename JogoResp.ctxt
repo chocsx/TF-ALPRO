@@ -1,4 +1,4 @@
 #BlueJ class context
-comment0.params=
-comment0.target=JogoResp()
+comment0.params=jResp\ qResp
+comment0.target=JogoResp(Jogo,\ Questionario)
 numComments=1

@@ -29,15 +29,19 @@ public class App
                 do{
                 System.out.println("\f Insira sua data de nascimento COMPLETA (dd/mm/aaaa):");
                 dataCompleta = ms.nextLine();
-                }while (dataCompleta.length() != 8);
+                }while (dataCompleta.length() != 10);
                 String estado;
                 do{
                     System.out.println("Em que estado do Brasil você mora? (Digite a sigla de UF)");    
                     estado = ms.nextLine();
                 }while(estado.length() != 2);
+                System.out.println("Qual o nome da sua Cidade?");
+                String cidade;
+                cidade = ms.nextLine();
                 System.out.println("Qual o nome da sua Escola?");
                 String nomeEscola;
                 nomeEscola = ms.nextLine();
+                Respondente novoResp = new Respondente(nameLista, nomeEscola, cidade, estado, dataCompleta );
                 break;
             case 2:
                 String game;
@@ -51,6 +55,8 @@ public class App
                     novoJogo = new Jogo(game, catego);
                 }while(listaJogos.contains(novoJogo) == true);
                 listaJogos.add(novoJogo);
+                
+                
                 Arrays.toString( listaJogos.toArray() );
 
                 break;
@@ -83,7 +89,7 @@ public class App
                     perg1.add(resposta1);
                     
                 
-                    System.out.println("PERGUNTA 2: O jogo avaliado possui atividades crescente de dificuldade? \n 1: Sim 2: Não Sei 3:Não (Digite o Número Correspondente a resposta ex:1)");
+                    System.out.println("PERGUNTA 2: O jogo avaliado possui atividades crescente de dificuldade? \n 1: Sim 2: Não Sei 3:Não (Digite o Número Correspondente a resposta ex:1");
                     resposta2 = ms.nextInt();
                     perg2.add(resposta2);
                     
@@ -102,6 +108,8 @@ public class App
                     System.out.println("PERGUNTA 6: Escreva aqui suas impressões a respeito deste jogo e procure colocar na sua avaliação usando palavras expressivas, tais como: otimo, bom, muito bom, ruim, fraco e outras que julgar melhor caracterizar sua avaliação.");
                     resposta6 = ms.nextLine();
                     perg6.add(resposta6);
+                    
+                    Questionario jResp = new Questionario();
                 } while (resposta6 == null);
 
                 break;
