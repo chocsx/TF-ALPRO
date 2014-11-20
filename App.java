@@ -6,8 +6,17 @@ public class App
         int escolha;
         ArrayList<Respondente> listaResp = new ArrayList<Respondente>();
         ArrayList<Jogo> listaJogos = new ArrayList<Jogo>();
+        ArrayList<String> perg1 = new ArrayList<String>();
+        ArrayList<Integer> perg2 = new ArrayList<Integer>(); 
+        ArrayList<Integer> perg3 = new ArrayList<Integer>();
+        ArrayList<Integer> perg4 = new ArrayList<Integer>();
+        ArrayList<Integer> perg5 = new ArrayList<Integer>();
+        ArrayList<String> perg6 = new ArrayList<String>();
+        
+        String resposta1, resposta6;
+        int resposta2, resposta3, resposta4, resposta5; 
         do{
-        System.out.println("\fBem-Vindo ao Sistema MatematiC@ndo: \n 1: Cadastro Respondente["+ listaResp.size()+ "] \n 2: Cadastro Jogo ["+ listaJogos.size()+ "] \n 3: Impressão de relatórios \n 4: Excluir Respondente \n 5: Alterar Respondente \n 6: Excluir Jogo");
+        System.out.println("\fBem-Vindo ao Sistema MatematiC@ndo: \n 1: Cadastro Respondente["+ listaResp.size()+ "] \n 2: Cadastro Jogo ["+ listaJogos.size()+ "] \n 3: Impressão de relatórios \n 4: Excluir Respondente \n 5: Alterar Respondente \n 6: Excluir Jogo \n 7: Questionário");
         System.out.println("Escolha a opção desejada:");
         escolha = ms.nextInt();
                   
@@ -65,13 +74,45 @@ public class App
                 listaJogos.remove(i);
                 break;
             case 7:
-                System.exit(1)  ;
+            Questionario registra = new Questionario(); //acessa atributos e metodos na classe questionario
+              do {
+
+                    System.out.println("\f PERGUNTA 1: Digite o nome do jogo avaliado: ");
+                    resposta1 = ms.nextLine();
+                    ms.nextLine();
+                    perg1.add(resposta1);
+                    
+                
+                    System.out.println("PERGUNTA 2: O jogo avaliado possui atividades crescente de dificuldade? \n 1: Sim 2: Não Sei 3:Não (Digite o Número Correspondente a resposta ex:1)");
+                    resposta2 = ms.nextInt();
+                    perg2.add(resposta2);
+                    
+                    System.out.println("PERGUNTA 3: O jogo apresenta os desafios de maneira acessível e bem explicada? \n1: Sim 2: Não");
+                    resposta3 = ms.nextInt();
+                    perg3.add(resposta3);
+                    
+                    System.out.println("PERGUNTA 4: Voce jogaria o jogo com seus alunos? \n1: Sim 2: Não Sei 3:Não");
+                    resposta4 = ms.nextInt();
+                    perg4.add(resposta4);
+                    
+                    System.out.println("PERGUNTA 5: O jogo trata de assuntos que você trabalha com seus alunos?\n1: Sim 2: Não");
+                    resposta5 = ms.nextInt();
+                    perg5.add(resposta5);
+                    
+                    System.out.println("PERGUNTA 6: Escreva aqui suas impressões a respeito deste jogo e procure colocar na sua avaliação usando palavras expressivas, tais como: otimo, bom, muito bom, ruim, fraco e outras que julgar melhor caracterizar sua avaliação.");
+                    resposta6 = ms.nextLine();
+                    perg6.add(resposta6);
+                } while (resposta6 == null);
+
                 break;
+            case 8:
+                System.exit(1)  ;
+                break;                
             default:
             System.out.println("Digite um numero válido");
             break;
         }
-    }while(escolha != 7);
+    }while(escolha != 8);
     
 }
 
