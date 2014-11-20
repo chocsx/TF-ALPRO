@@ -31,16 +31,24 @@ public class Respondente
             return "Nome: " + nome + " Cidade: " + cidade + " Estado: " + estado + " Escola: "+ nomeEscola;
         }
         public int getIdade(){
-            String dataString = "02/10/2013"; //Variavel com a data atual no nosso formato
-            
-            Calendar data = Calendar.getInstance(); 
-            String[] list = data.split(dataString, " / ");
-            
-            data.set(Calendar.DAY_OF_MONTH, Integer.parseInt(dt[0])); //Passo o dia, mes e ano usando o método 'set' e como parametros o ENUM que representa o dia do mes, mes e ano.
-            data.set(Calendar.MONTH, (Integer.parseInt(dt[1]))-1); //Detalhe, o Calendar considera que Janeiro é o mês '0', então você deve subtrair '1' do mês que foi passado
-            data.set(Calendar.YEAR, Integer.parseInt(dt[2]));      //como parametro, se não caso você cadastr o mês 10, de vez outubro, ele imprimi novembro.
-            
-            System.out.println(data.getTime()); //O método getTime imprimi a data que você determinou.
+             int anoNasc;   
+             int anoAtual;  
+             int ano = 2014;
+             int dia = 05;
+             Date hoje = new Date();
+             Calendar cal = Calendar.getInstance();
+             
+             cal.setTime(hoje);
+             int dia1 = cal.get(Calendar.DAY_OF_YEAR);
+             int ano1 = cal.get(Calendar.YEAR);
+          
+             int nAno = ano1 - ano;
+             
+             if(dia1 < dia){
+                 nAno--; //Ainda não completou aniversario esse ano.  
+                }
+             //Impressão  
+             return nAno;
              
             }
     
