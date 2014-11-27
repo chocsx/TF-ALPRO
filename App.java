@@ -16,7 +16,8 @@ public class App
         String resposta1, resposta6;
         int resposta2, resposta3, resposta4, resposta5; 
         do{
-        System.out.println("\fBem-Vindo ao Sistema MatematiC@ndo: \n 1: Cadastro Respondente["+ listaResp.size()+ "] \n 2: Cadastro Jogo ["+ listaJogos.size()+ "] \n 3: Impressão de relatórios \n 4: Excluir Respondente \n 5: Alterar Respondente \n 6: Excluir Jogo \n 7: Questionário");
+        System.out.println("\fBem-Vindo ao Sistema MatematiC@ndo: \n 1: Cadastro Respondente["+ listaResp.size()+ "] \n 2: Cadastro Jogo ["+ listaJogos.size()+ 
+        "] \n 3: Impressão de relatórios \n 4: Excluir Respondente \n 5: Alterar Respondente \n 6: Excluir Jogo \n 7: Questionário \n 8: Sair");
         System.out.println("Escolha a opção desejada:");
         escolha = ms.nextInt();
                   
@@ -27,8 +28,8 @@ public class App
                 nameLista = ms.nextLine();
                 String dataCompleta;
                 do{
-                System.out.println("\f Insira sua data de nascimento COMPLETA (dd/mm/aaaa):");
-                dataCompleta = ms.nextLine();
+                    System.out.println("Insira sua data de nascimento COMPLETA (dd/mm/aaaa):");
+                    dataCompleta = ms.nextLine();
                 }while (dataCompleta.length() != 10);
                 String estado;
                 do{
@@ -42,7 +43,9 @@ public class App
                 String nomeEscola;
                 nomeEscola = ms.nextLine();
                 Respondente novoResp = new Respondente(nameLista, nomeEscola, cidade, estado, dataCompleta );
-                break;
+                listaResp.add(novoResp);
+                Arrays.toString( listaResp.toArray() );
+            break;
             case 2:
                 String game;
                 Jogo novoJogo;
@@ -67,7 +70,8 @@ public class App
                 deletaNome = ms.nextLine();
                 break;
             case 5:
-                System.exit(1)  ;
+                
+                break;
             case 6: 
                 System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
                 int i = 0;
