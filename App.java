@@ -78,7 +78,19 @@ public class App
                 break;
             case 5:
                 if(listaResp.size() != 0){
-                System.out.println(listaResp + "\n");
+                System.out.printf("Percorrendo a Lista Respondente (usando o índice)\n");
+                int j = 0;
+                for (Respondente nome: listaResp) {
+                    System.out.printf("Posição %d- %s\n", j, nome);
+                    j++;
+                }
+                System.out.printf("\nInforme o respondente a ser Modificado:\n"); 
+                j = ms.nextInt();
+                String hy;
+                    do{System.out.printf("\nInsira o nome:\n"); 
+                hy = ms.nextLine();
+                listaResp.get(j).setNome(hy);  
+            }while(hy == null);                
             }
                 break;
             case 6: 
