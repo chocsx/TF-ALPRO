@@ -63,17 +63,27 @@ public class App
                 Arrays.toString( listaJogos.toArray() );
 
                 break;
-            case 4: //excluir respondente
-                System.out.println("\f Qual pessoa você quer excluir? "); 
-                System.out.println(listaResp);
-                String deletaNome;
-                deletaNome = ms.nextLine();
+            case 4:
+            if(listaResp.size() != 0){    
+                System.out.printf("Percorrendo a Lista Respondente (usando o índice)\n");
+                int i = 0;
+                for (Respondente nome: listaResp) {
+                    System.out.printf("Posição %d- %s\n", i, nome);
+                    i++;
+                }
+                System.out.printf("\nInforme a posição a ser excluída:\n"); 
+                i = ms.nextInt();
+                listaResp.remove(i);
+            }
                 break;
             case 5:
-                
+                if(listaResp.size() != 0){
+                System.out.println(listaResp + "\n");
+            }
                 break;
             case 6: 
-                System.out.printf("Percorrendo o ArrayList (usando o índice)\n");
+                if(listaJogos.size() != 0){
+                System.out.printf("Percorrendo a Lista Jogos (usando o índice)\n");
                 int i = 0;
                 for (Jogo nomeJogo: listaJogos) {
                     System.out.printf("Posição %d- %s\n", i, nomeJogo);
@@ -82,6 +92,7 @@ public class App
                 System.out.printf("\nInforme a posição a ser excluída:\n"); 
                 i = ms.nextInt();
                 listaJogos.remove(i);
+            }
                 break;
             case 7:
             Questionario registra = new Questionario(); //acessa atributos e metodos na classe questionario
